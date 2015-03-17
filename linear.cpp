@@ -1,4 +1,4 @@
-//
+    //
 //  linear.cpp
 //  Exercise2
 //

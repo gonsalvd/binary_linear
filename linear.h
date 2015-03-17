@@ -10,6 +10,7 @@
 #define __Exercise2__linear__
 
 #include <stdio.h>
+#include <algorithm>
 
 #endif /* defined(__Exercise2__linear__) */
 
@@ -17,8 +18,7 @@ class linear
 {
     
 private:
-    int test;
-    int test2;
+    
 public:
     int BeforeMerge();
     

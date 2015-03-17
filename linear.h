@@ -17,6 +17,7 @@ class linear
 {
     
 private:
+    int test;
 public:
     
 };

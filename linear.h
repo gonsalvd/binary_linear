@@ -20,5 +20,6 @@ private:
     int test;
     int test2;
 public:
+    int testBranchMethod();
     
 };

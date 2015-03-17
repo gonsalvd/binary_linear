@@ -18,6 +18,7 @@ class linear
     
 private:
     int test;
+    int test2;
 public:
     
 };

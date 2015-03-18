@@ -14,22 +14,8 @@
 
 using namespace std;
 
-int main(int argc, char *argv[])
+void setGen(int NE, int NS)
 {
-    int NE;  // number of elements
-    int NS;  // number of element to search
-    if (argc != 3)
-    {
-        printf("<usage>: parameters.\n");
-        return 1;
-    }
-    else
-    {
-        NE = atoi(argv[1]);
-        NS = atoi(argv[2]);
-        //printf("Number of elements = %d\nNumber of elements to search = %d\n", NE, NS);
-    }
-
     // Initializing seed for pseudo-random sequence
     srand(time(NULL));
 
@@ -45,6 +31,8 @@ int main(int argc, char *argv[])
         if (r < 0.05)           // Introducing neg. numbers with 5% probability
             number = - number;
         printf("%d ", number);
+        
+        cout<<"here1"<<endl;
 
         if (!(i % 100)) printf("\n");
     }
@@ -60,6 +48,7 @@ int main(int argc, char *argv[])
         if (r < 0.05)           // Introducing neg. numbers with 5% probability
             number = - number;
         printf("%d ", number);
+        cout<<"here2"<<endl;
 
         if (!(i % 100)) printf("\n");
     }

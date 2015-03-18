@@ -12,4 +12,6 @@
 #include <stdio.h>
 #include <algorithm>
 
+
+
 #endif /* defined(__Exercise2__binary__) */

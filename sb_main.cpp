@@ -18,10 +18,11 @@
 #include <vector>
 using namespace std;
 
-void binarySearch (int NE, int NS, int all[], int search[])
+//this is going to be RECURSIVE
+//
+void binarySearch (int NE, int NS, vector<int> all, int search[])
 {
-    vector<int> all_vector (all, all+NE);
-    sort(all_vector.begin(), all_vector.begin()+NE);
+    
 
 }
 
@@ -89,7 +90,7 @@ int main(int argc, char **argv)
         //added number to set
         all_holder[i] = number;
         
-        //cout<<all_holder[i]<<endl;
+        cout<<all_holder[i]<<endl;
         
         //if (!(i % 100)) printf("\n");
     }
@@ -108,7 +109,7 @@ int main(int argc, char **argv)
         
         //added
         search_holder[i] = number;
-        //cout<<search_holder[i]<<endl;
+        cout<<search_holder[i]<<endl;
 
         
         //cout<<"here2"<<endl;
@@ -121,6 +122,19 @@ int main(int argc, char **argv)
     clock_t start = 0;
     clock_t finish = 0;
     double elapsed_time = 0;
+    
+    //Put all array values into a vector for easy sorting
+    vector<int> all_vector (all_holder, all_holder+NE);
+    sort(all_vector.begin(), all_vector.begin()+NE);
+    //cout<<"Array value at 0:"<<all_holder[0]<<endl;
+    
+    //Print out to confirm that everything was sorted
+    //Sortingis done OUTSIDE of the timing function for BOTH BINARY AND LINEAR SEARCH
+    for(int a=0; a<NE; a++)
+    {
+        cout<<"Vector value at "<<a<<": "<<all_vector.at(a)<<endl;
+
+    }
     
     start = clock();
     // Here goes the code you want to time

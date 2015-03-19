@@ -51,20 +51,31 @@ void linearSearch (int NE, int NS, int all[], int search[])
 {
     int search_value = 0;
     int all_value = 0;
+    bool flag = false;
     
     for (int i = 0; i < NS; i++)
     {
+        flag = false;
         search_value = search[i];
         //cout<<"search value:"<<search_value<<endl;
         
-        for(int j =0; j<NE; j++)
+        for(int j = 0; j<NE; j++)
         {
             all_value = all[j];
             if(search_value == all_value)
             {
-                cout<<"Match found for: "<<search_value<<endl;
+                //cout<<"Match found for: "<<search_value<<endl;
+                cout<<"Yes"<<endl;
+                flag = true;
                 break;
             }
+        }
+        //crappy implementation where we have to always check this variable (time costing and stupid)
+        //how could i have gotten rid of this flag?
+        if (flag == false)
+        {
+            cout<<"No"<<endl;
+            
         }
     }
 }
@@ -123,7 +134,16 @@ int main(int argc, char **argv)
         // ...
         
         //LINEAR SEARCH TIMING
+        cout<<"Linear Search: "<<endl;
         linearSearch(NE,NS,all_holder,search_holder);
+        
+//        //BINARY SEARCH TIMING
+//        cout<<"Binary Search: "<<endl;
+//        for (int a=0; a<NS; a++)
+//        {
+//            //Pasing all these variables is pretty poor programming. BinarySearch COULD just reference global variables, etc. Well maybe this isnt too bad and could be reused a little easier.
+//            binarySearch(NE, 0, NE-1, all_vector, search_holder[a]);
+//        }
         
         cout<<"outside of binary"<<endl;
         finish = clock();

@@ -17,6 +17,7 @@
 		6A680B901AB844CB008B522A /* example_io.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = example_io.txt; sourceTree = "<group>"; };
 		6A970E001AB8E9A100EF3031 /* sb_main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = sb_main.cpp; sourceTree = "<group>"; };
 		6A970E011ABB892F00EF3031 /* test.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = test.txt; sourceTree = "<group>"; };
+		6A970E021ABBA48900EF3031 /* sb_main_final.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = sb_main_final.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -28,6 +29,7 @@
 				6A680B8C1AB84277008B522A /* makefile */,
 				6A680B8B1AB84209008B522A /* input-gen.cpp */,
 				6A970E001AB8E9A100EF3031 /* sb_main.cpp */,
+				6A970E021ABBA48900EF3031 /* sb_main_final.cpp */,
 				6A970E011ABB892F00EF3031 /* test.txt */,
 				6A680B8E1AB843EF008B522A /* binary.h */,
 				6A680B8D1AB843EF008B522A /* binary.cpp */,

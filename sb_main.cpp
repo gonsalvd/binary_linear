@@ -25,33 +25,31 @@ void binarySearch (int NE, int left, int right, vector<int> all, int search_valu
     //this catches and stops the sequence
     if (left > right)
     {
+        cout<<"No"<<endl;
         return;
     }
     //eg 9/2 = 4 (due to 4.5 being casted as int to 4)
     //left side will be from 0 to 4 and right side from 5 to 9
-    cout<<"got here"<<endl;
     int middle = (left + right) / 2;
     if (search_value == all.at(middle))
     {
-        cout<<"Hit match of "<<search_value<<endl;
+        cout<<"Yes"<<endl;
         return;
     }
     //Equivalent to not finding it
     if (left == right)
     {
-        cout<<"not found"<<endl;
+        cout<<"No"<<endl;
         return;
     }
     if (search_value < all.at(middle))
     {
-        cout<<"all.ad(middle in less tahn"<<all.at(middle)<<endl;
         return binarySearch(0, left, middle - 1, all, search_value);
     }
     else
     {
         return binarySearch(0, middle + 1, right, all, search_value);
     }
-
     
 }
 
@@ -137,10 +135,11 @@ int main(int argc, char **argv)
         clock_t start = 0;
         clock_t finish = 0;
         double elapsed_time = 0;
-        start = clock();
+        
         // Here goes the code you want to time
         // ...
         
+        start = clock();
         //LINEAR SEARCH TIMING
         cout<<"Linear Search: "<<endl;
         linearSearch(NE,NS,all_holder,search_holder);
@@ -149,14 +148,19 @@ int main(int argc, char **argv)
         vector<int> all_vector (all_holder, all_holder+NE);
         sort(all_vector.begin(), all_vector.begin()+NE);
         
-        //Print out to confirm that everything was sorted
-        //Sortingis done OUTSIDE of the timing function for BOTH BINARY AND LINEAR SEARCH
-        for(int a=0; a<NE; a++)
-        {
-            cout<<"Vector value at "<<a<<": "<<all_vector.at(a)<<endl;
-            
-        }
+        //        //Print out to confirm that everything was sorted
+        //        //Sortingis done OUTSIDE of the timing function for BOTH BINARY AND LINEAR SEARCH
+        //        for(int a=0; a<NE; a++)
+        //        {
+        //            cout<<"Vector value at "<<a<<": "<<all_vector.at(a)<<endl;
+        //
+        //        }
+        finish = clock();
+        elapsed_time = (double)(finish - start) / CLOCKS_PER_SEC;
+        cout<<"Time for LinearSearch: "<<elapsed_time<<endl;
         
+        
+        start = clock();
         //BINARY SEARCH TIMING
         cout<<"Binary Search: "<<endl;
         for (int a=0; a<NS; a++)
@@ -165,12 +169,11 @@ int main(int argc, char **argv)
             binarySearch(NE, 0, NE-1, all_vector, search_holder[a]);
         }
         
-        cout<<"outside of binary"<<endl;
         finish = clock();
         elapsed_time = (double)(finish - start) / CLOCKS_PER_SEC;
         cout<<"Value of N: "<<NE<<endl;
         cout<<"Value of S: "<<NS<<endl;
-        cout<<"Time for LinearSearch: "<<elapsed_time<<endl;
+        cout<<"Time for BinarySearch: "<<elapsed_time<<endl;
         
         return 0;
         
@@ -236,10 +239,14 @@ int main(int argc, char **argv)
         clock_t finish = 0;
         double elapsed_time = 0;
         
+        start = clock();
+        //LINEAR SEARCH TIMING
+        cout<<"Linear Search: "<<endl;
+        linearSearch(NE,NS,all_holder,search_holder);
+        
         //Put all array values into a vector for easy sorting
         vector<int> all_vector (all_holder, all_holder+NE);
         sort(all_vector.begin(), all_vector.begin()+NE);
-        //cout<<"Array value at 0:"<<all_holder[0]<<endl;
         
         //Print out to confirm that everything was sorted
         //Sortingis done OUTSIDE of the timing function for BOTH BINARY AND LINEAR SEARCH
@@ -248,26 +255,28 @@ int main(int argc, char **argv)
             cout<<"Vector value at "<<a<<": "<<all_vector.at(a)<<endl;
             
         }
+        finish = clock();
+        elapsed_time = (double)(finish - start) / CLOCKS_PER_SEC;
+        cout<<"Time for LinearSearch: "<<elapsed_time<<endl;
+        
         
         start = clock();
-        // Here goes the code you want to time
-        // ...
-        
-        //    //LINEAR SEARCH TIMING
-        //    linearSearch(NE,NS,all_holder,search_holder);
-        
         //BINARY SEARCH TIMING
-        //    for (int a=0; a<NS; a++)
-        //    {
-        //        //Pasing all these variables is pretty poor programming. BinarySearch COULD just reference global variables, etc. Well maybe this isnt too bad and could be reused a little easier.
-        //        binarySearch(NE, 0, NE-1, all_vector, search_holder[a]);
-        //    }
-        cout<<"outside of binary"<<endl;
+        cout<<"Binary Search: "<<endl;
+        for (int a=0; a<NS; a++)
+        {
+            cout<<"val of binary search pass:"<<a<<endl;
+            //Pasing all these variables is pretty poor programming. BinarySearch COULD just reference global variables, etc. Well maybe this isnt too bad and could be reused a little easier.
+            binarySearch(NE, 0, NE-1, all_vector, search_holder[a]);
+        }
+        
         finish = clock();
         elapsed_time = (double)(finish - start) / CLOCKS_PER_SEC;
         cout<<"Value of N: "<<NE<<endl;
         cout<<"Value of S: "<<NS<<endl;
-        cout<<"Time for LinearSearch: "<<elapsed_time<<endl;
+        cout<<"Time for BinarySearch: "<<elapsed_time<<endl;
+        
+        return 0;
     }
     
     return 0;

@@ -1,0 +1,31 @@
+10 6
+-1510409088
+1346165022
+1008408335
+1999378168
+1890764525
+1112534724
+1776887944
+2001493933
+1994553969
+889988882
+
+22096275
+300010210
+952981977
+848002046
+1013009943
+578220518
+
+Binary Search:
+val of binary search pass:0
+No
+val of binary search pass:1
+No
+val of binary search pass:2
+val of binary search pass:3
+No
+val of binary search pass:4
+No
+val of binary search pass:5
+No
